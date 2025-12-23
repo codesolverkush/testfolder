@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "targets": [
+      "testfolder_function"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "cliet",
+    "plugin": "zcatalyst-cli-plugin-react"
+  }
+}

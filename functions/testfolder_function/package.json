@@ -1,0 +1,9 @@
+{
+	"name": "testfolder_function",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "kushalpratapsingh17@gmail.com",
+	"dependencies": {
+		"zcatalyst-sdk-node": "latest"
+	}
+}
