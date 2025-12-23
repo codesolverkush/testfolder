@@ -1,17 +1,34 @@
-version: 1.0
+version: 1
+runners:
+  Machine:
+    config-id: 2
 jobs:
-  hello:
+  Deploy_Client_Functions:
     steps:
-      - echo "Hello"
-  world:
-    steps:
-      - echo "World"
-  hello-world:
-    steps:
-      - echo "Hello World!"
+      - apt-get update
+      - apt-get -y install openjdk-17-jdk curl
+      - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      - apt-get install -y nodejs
+      - apt-get update && \
+      - apt-get install -y software-properties-common wget curl && \
+      - add-apt-repository ppa:deadsnakes/ppa && \
+      - apt-get update && \
+      - apt-get install -y python3.9 python3.9-distutils && \
+      - wget https://bootstrap.pypa.io/get-pip.py && \
+      - python3.9 get-pip.py && \
+      - rm get-pip.py
+      - npm i -g zcatalyst-cli
+      - catalyst -v
+      - cd cliet
+      - npm install zcatalyst-cli-plugin-react
+      - cd ..
+      - cd functions/testfolder_function
+      - npm install
+      - npm install zcatalyst-cli-plugin-react
+      - cd ../..
+      - catalyst deploy --project 13738000000097152 --org 60038186875 --token
+        m_1004.6e017118afe045b8addf16158cc16170.dfab8abff42eb2574a688c5cbdbf34f3
 stages:
   - name: build
     jobs:
-      - - hello
-        - world
-      - hello-world
+      - Deploy_Client_Functions
